@@ -7,7 +7,7 @@ import 'package:rick_and_morty/feature/domain/repositories/person_repository.dar
 
 class SearchPerson extends UseCase<List<PersonEntity>, SearchPersonParams> {
   final PersonRepository personRepository;
-  SearchPerson({required this.personRepository});
+  SearchPerson(this.personRepository);
 
   Future<Either<Failure, List<PersonEntity>>> call(
       SearchPersonParams params) async {

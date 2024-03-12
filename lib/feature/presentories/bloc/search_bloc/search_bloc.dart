@@ -7,9 +7,9 @@ part 'search_event.dart';
 part 'search_state.dart';
 part 'search_bloc.freezed.dart';
 
-class SearchBloc extends Bloc<SearchEvent, SearchState> {
+class PersonSearchBloc extends Bloc<SearchEvent, SearchState> {
   final SearchPerson searchPerson;
-  SearchBloc({required this.searchPerson}) : super(_Initial()) {
+  PersonSearchBloc({required this.searchPerson}) : super(_Initial()) {
     // on<SearchEvent>((event, emit) {
     //   // TODO: implement event handler
     // });
