@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rick_and_morty/feature/domain/entities/person_entity.dart';
 import 'package:rick_and_morty/feature/presentories/bloc/cubit/person_list_cubit.dart';
 
 class PersonsList extends StatelessWidget {
@@ -20,11 +21,19 @@ class PersonsList extends StatelessWidget {
               child: Text('loading'),
             ),
           ),
-          loaded: (_1) => Container(
-            child: Center(
-              child: Text('loaded'),
-            ),
-          ),
+          loaded: (personList) {
+            return ListView.separated(
+              itemBuilder: (context, index) {
+                return PersonCard(person: personList[index]);
+              },
+              separatorBuilder: (context, index) {
+                return Divider(
+                  color: Colors.grey[400],
+                );
+              },
+              itemCount: 1,
+            );
+          },
           error: () => Container(
             child: Center(
               child: Text('error'),

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:rick_and_morty/core/error/exception.dart';
 import 'package:rick_and_morty/feature/data/models/person_model.dart';
@@ -31,7 +29,7 @@ class PersonRemoteDataSourceImpl implements PersonRemoteDataSource {
     print(url);
     final respons = await client.get(url);
     if (respons.statusCode == 200) {
-      final person = jsonDecode(respons.data);
+      final person = respons.data;
       return (person['results'] as List)
           .map((person) => PersonModel.fromJson(person))
           .toList();

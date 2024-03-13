@@ -17,7 +17,8 @@ _$PersonModelImpl _$$PersonModelImplFromJson(Map<String, dynamic> json) =>
       origin: LocationModel.fromJson(json['origin'] as Map<String, dynamic>),
       location:
           LocationModel.fromJson(json['location'] as Map<String, dynamic>),
-      episode: json['episode'] as String,
+      episode:
+          (json['episode'] as List<dynamic>).map((e) => e as String).toList(),
       created: DateTime.parse(json['created'] as String),
     );
 

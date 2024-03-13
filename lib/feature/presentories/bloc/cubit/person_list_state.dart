@@ -7,6 +7,6 @@ class PersonListState with _$PersonListState {
       {required List<PersonEntity>? oldPersonList,
       required bool? isFitstFetch}) = _Loading;
   const factory PersonListState.loaded(
-      {required List<PersonEntity>? personList}) = _Loaded;
+      {required List<PersonEntity> personList}) = _Loaded;
   const factory PersonListState.error() = _Error;
 }

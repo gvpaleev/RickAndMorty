@@ -22,7 +22,7 @@ mixin _$PersonListState {
     required TResult Function(
             List<PersonEntity>? oldPersonList, bool? isFitstFetch)
         loading,
-    required TResult Function(List<PersonEntity>? personList) loaded,
+    required TResult Function(List<PersonEntity> personList) loaded,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,7 +31,7 @@ mixin _$PersonListState {
     TResult? Function()? initial,
     TResult? Function(List<PersonEntity>? oldPersonList, bool? isFitstFetch)?
         loading,
-    TResult? Function(List<PersonEntity>? personList)? loaded,
+    TResult? Function(List<PersonEntity> personList)? loaded,
     TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,7 +40,7 @@ mixin _$PersonListState {
     TResult Function()? initial,
     TResult Function(List<PersonEntity>? oldPersonList, bool? isFitstFetch)?
         loading,
-    TResult Function(List<PersonEntity>? personList)? loaded,
+    TResult Function(List<PersonEntity> personList)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -132,7 +132,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(
             List<PersonEntity>? oldPersonList, bool? isFitstFetch)
         loading,
-    required TResult Function(List<PersonEntity>? personList) loaded,
+    required TResult Function(List<PersonEntity> personList) loaded,
     required TResult Function() error,
   }) {
     return initial();
@@ -144,7 +144,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function(List<PersonEntity>? oldPersonList, bool? isFitstFetch)?
         loading,
-    TResult? Function(List<PersonEntity>? personList)? loaded,
+    TResult? Function(List<PersonEntity> personList)? loaded,
     TResult? Function()? error,
   }) {
     return initial?.call();
@@ -156,7 +156,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function(List<PersonEntity>? oldPersonList, bool? isFitstFetch)?
         loading,
-    TResult Function(List<PersonEntity>? personList)? loaded,
+    TResult Function(List<PersonEntity> personList)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -298,7 +298,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(
             List<PersonEntity>? oldPersonList, bool? isFitstFetch)
         loading,
-    required TResult Function(List<PersonEntity>? personList) loaded,
+    required TResult Function(List<PersonEntity> personList) loaded,
     required TResult Function() error,
   }) {
     return loading(oldPersonList, isFitstFetch);
@@ -310,7 +310,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function(List<PersonEntity>? oldPersonList, bool? isFitstFetch)?
         loading,
-    TResult? Function(List<PersonEntity>? personList)? loaded,
+    TResult? Function(List<PersonEntity> personList)? loaded,
     TResult? Function()? error,
   }) {
     return loading?.call(oldPersonList, isFitstFetch);
@@ -322,7 +322,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function(List<PersonEntity>? oldPersonList, bool? isFitstFetch)?
         loading,
-    TResult Function(List<PersonEntity>? personList)? loaded,
+    TResult Function(List<PersonEntity> personList)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -388,7 +388,7 @@ abstract class _$$LoadedImplCopyWith<$Res> {
           _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<PersonEntity>? personList});
+  $Res call({List<PersonEntity> personList});
 }
 
 /// @nodoc
@@ -402,13 +402,13 @@ class __$$LoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? personList = freezed,
+    Object? personList = null,
   }) {
     return _then(_$LoadedImpl(
-      personList: freezed == personList
+      personList: null == personList
           ? _value._personList
           : personList // ignore: cast_nullable_to_non_nullable
-              as List<PersonEntity>?,
+              as List<PersonEntity>,
     ));
   }
 }
@@ -416,17 +416,15 @@ class __$$LoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl({required final List<PersonEntity>? personList})
+  const _$LoadedImpl({required final List<PersonEntity> personList})
       : _personList = personList;
 
-  final List<PersonEntity>? _personList;
+  final List<PersonEntity> _personList;
   @override
-  List<PersonEntity>? get personList {
-    final value = _personList;
-    if (value == null) return null;
+  List<PersonEntity> get personList {
     if (_personList is EqualUnmodifiableListView) return _personList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_personList);
   }
 
   @override
@@ -460,7 +458,7 @@ class _$LoadedImpl implements _Loaded {
     required TResult Function(
             List<PersonEntity>? oldPersonList, bool? isFitstFetch)
         loading,
-    required TResult Function(List<PersonEntity>? personList) loaded,
+    required TResult Function(List<PersonEntity> personList) loaded,
     required TResult Function() error,
   }) {
     return loaded(personList);
@@ -472,7 +470,7 @@ class _$LoadedImpl implements _Loaded {
     TResult? Function()? initial,
     TResult? Function(List<PersonEntity>? oldPersonList, bool? isFitstFetch)?
         loading,
-    TResult? Function(List<PersonEntity>? personList)? loaded,
+    TResult? Function(List<PersonEntity> personList)? loaded,
     TResult? Function()? error,
   }) {
     return loaded?.call(personList);
@@ -484,7 +482,7 @@ class _$LoadedImpl implements _Loaded {
     TResult Function()? initial,
     TResult Function(List<PersonEntity>? oldPersonList, bool? isFitstFetch)?
         loading,
-    TResult Function(List<PersonEntity>? personList)? loaded,
+    TResult Function(List<PersonEntity> personList)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -533,10 +531,10 @@ class _$LoadedImpl implements _Loaded {
 }
 
 abstract class _Loaded implements PersonListState {
-  const factory _Loaded({required final List<PersonEntity>? personList}) =
+  const factory _Loaded({required final List<PersonEntity> personList}) =
       _$LoadedImpl;
 
-  List<PersonEntity>? get personList;
+  List<PersonEntity> get personList;
   @JsonKey(ignore: true)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -584,7 +582,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function(
             List<PersonEntity>? oldPersonList, bool? isFitstFetch)
         loading,
-    required TResult Function(List<PersonEntity>? personList) loaded,
+    required TResult Function(List<PersonEntity> personList) loaded,
     required TResult Function() error,
   }) {
     return error();
@@ -596,7 +594,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? initial,
     TResult? Function(List<PersonEntity>? oldPersonList, bool? isFitstFetch)?
         loading,
-    TResult? Function(List<PersonEntity>? personList)? loaded,
+    TResult? Function(List<PersonEntity> personList)? loaded,
     TResult? Function()? error,
   }) {
     return error?.call();
@@ -608,7 +606,7 @@ class _$ErrorImpl implements _Error {
     TResult Function()? initial,
     TResult Function(List<PersonEntity>? oldPersonList, bool? isFitstFetch)?
         loading,
-    TResult Function(List<PersonEntity>? personList)? loaded,
+    TResult Function(List<PersonEntity> personList)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {

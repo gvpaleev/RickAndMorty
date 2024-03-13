@@ -12,11 +12,20 @@ class PersonListCubit extends Cubit<PersonListState> {
       // PersonListCubit()
       : super(PersonListState.initial());
   void loadPerson() async {
-    await Future.delayed(Duration(seconds: 3));
-    emit(PersonListState.loading(oldPersonList: null, isFitstFetch: null));
-    await Future.delayed(Duration(seconds: 3));
-    emit(PersonListState.loaded(personList: null));
-    await Future.delayed(Duration(seconds: 3));
-    emit(PersonListState.error());
+    final failureOrPerson = await getAllPersons(PagePersonParams(page: 1));
+
+    failureOrPerson.fold((error) => emit(PersonListState.error()), (character) {
+      // page++;
+      // final persons = (state as PersonLoading).oldPersonsList;
+      // persons.addAll(character);
+      // print('List length: ${persons.length.toString()}');
+      emit(PersonListState.loaded(personList: character));
+    });
+    // await Future.delayed(Duration(seconds: 3));
+    // emit(PersonListState.loading(oldPersonList: null, isFitstFetch: null));
+    // await Future.delayed(Duration(seconds: 3));
+    // emit(PersonListState.loaded(personList: failureOrPerson));
+    // await Future.delayed(Duration(seconds: 3));
+    // emit(PersonListState.error());
   }
 }

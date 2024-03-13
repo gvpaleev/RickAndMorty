@@ -1,45 +1,49 @@
-import 'package:equatable/equatable.dart';
+// part 'person_entity.freezed.dart';
+// part 'person_entity.g.dart';
 
-class PersonEntity extends Equatable {
-  final int id;
-  final String name;
-  final String status;
-  final String species;
-  final String type;
-  final String gender;
-  final LocationEntity origin;
-  final LocationEntity location;
-  final List<String> episode;
-  final DateTime created;
-  const PersonEntity(
-      {required this.id,
-      required this.name,
-      required this.status,
-      required this.species,
-      required this.type,
-      required this.gender,
-      required this.origin,
-      required this.location,
-      required this.episode,
-      required this.created});
+// @freezed
+class PersonEntity {
+  // int? id;
+  // String? name;
+  // String? status;
+  // String? species;
+  // String? type;
+  // String? gender;
+  // //  LocationEntity origin;
+  // //  LocationEntity location;
+  // List<String>? episode;
+  // DateTime? created;
+  // const PersonEntity(
+  //     {required this.id,
+  //     required this.name,
+  //     required this.status,
+  //     required this.species,
+  //     required this.type,
+  //     required this.gender,
+  //     required this.origin,
+  //     required this.location,
+  //     required this.episode,
+  //     required this.created});
+  // const factory PersonEntity(
+  //     {required int id,
+  //     required String name,
+  //     required String status,
+  //     required String species,
+  //     required String type,
+  //     required String gender,
+  //     required LocationEntity origin,
+  //     required LocationEntity location,
+  //     required List<String> episode,
+  //     required DateTime created}) = _PersonEntity;
 
-  @override
-  List<Object?> get props => [
-        id,
-        name,
-        status,
-        species,
-        type,
-        gender,
-        origin,
-        location,
-        episode,
-        created
-      ];
+  // factory PersonEntity.fromJson(Map<String, dynamic> json) =>
+  //     _$PersonEntityFromJson(json);
 }
 
-class LocationEntity {
-  final String name;
-  final String url;
-  LocationEntity({required this.name, required this.url});
-}
+// @freezed
+// class LocationEntity with _$LocationEntity {
+//   const factory LocationEntity({required String name, required String url2}) =
+//       _LocationEntity;
+//   factory LocationEntity.fromJson(Map<String, dynamic> json) =>
+//       _$LocationEntityFromJson(json);
+// }

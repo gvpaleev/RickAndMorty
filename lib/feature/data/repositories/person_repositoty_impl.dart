@@ -32,11 +32,12 @@ class PersonRepositoryImpl implements PersonRepository {
     });
   }
 
-  _getPersons(Future<List<PersonModel>> Function() getPerson) async {
+  Future<Either<Failure, List<PersonEntity>>> _getPersons(
+      Future<List<PersonEntity>> Function() getPerson) async {
     if (await networkInfo.isConnected) {
       try {
         final remotePerson = await getPerson();
-        localDataSource.personsToCache(remotePerson);
+        // localDataSource.personsToCache(remotePerson);
         return Right(remotePerson);
       } on ServerException {
         return Left(ServerFailure());

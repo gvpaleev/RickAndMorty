@@ -28,7 +28,7 @@ mixin _$PersonModel {
   String get gender => throw _privateConstructorUsedError;
   LocationModel get origin => throw _privateConstructorUsedError;
   LocationModel get location => throw _privateConstructorUsedError;
-  String get episode => throw _privateConstructorUsedError;
+  List<String> get episode => throw _privateConstructorUsedError;
   DateTime get created => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -52,7 +52,7 @@ abstract class $PersonModelCopyWith<$Res> {
       String gender,
       LocationModel origin,
       LocationModel location,
-      String episode,
+      List<String> episode,
       DateTime created});
 
   $LocationModelCopyWith<$Res> get origin;
@@ -119,7 +119,7 @@ class _$PersonModelCopyWithImpl<$Res, $Val extends PersonModel>
       episode: null == episode
           ? _value.episode
           : episode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as List<String>,
       created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
@@ -161,7 +161,7 @@ abstract class _$$PersonModelImplCopyWith<$Res>
       String gender,
       LocationModel origin,
       LocationModel location,
-      String episode,
+      List<String> episode,
       DateTime created});
 
   @override
@@ -226,9 +226,9 @@ class __$$PersonModelImplCopyWithImpl<$Res>
           : location // ignore: cast_nullable_to_non_nullable
               as LocationModel,
       episode: null == episode
-          ? _value.episode
+          ? _value._episode
           : episode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as List<String>,
       created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
@@ -249,8 +249,9 @@ class _$PersonModelImpl implements _PersonModel {
       required this.gender,
       required this.origin,
       required this.location,
-      required this.episode,
-      required this.created});
+      required final List<String> episode,
+      required this.created})
+      : _episode = episode;
 
   factory _$PersonModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$PersonModelImplFromJson(json);
@@ -271,8 +272,14 @@ class _$PersonModelImpl implements _PersonModel {
   final LocationModel origin;
   @override
   final LocationModel location;
+  final List<String> _episode;
   @override
-  final String episode;
+  List<String> get episode {
+    if (_episode is EqualUnmodifiableListView) return _episode;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_episode);
+  }
+
   @override
   final DateTime created;
 
@@ -295,14 +302,24 @@ class _$PersonModelImpl implements _PersonModel {
             (identical(other.origin, origin) || other.origin == origin) &&
             (identical(other.location, location) ||
                 other.location == location) &&
-            (identical(other.episode, episode) || other.episode == episode) &&
+            const DeepCollectionEquality().equals(other._episode, _episode) &&
             (identical(other.created, created) || other.created == created));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, status, species, type,
-      gender, origin, location, episode, created);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      status,
+      species,
+      type,
+      gender,
+      origin,
+      location,
+      const DeepCollectionEquality().hash(_episode),
+      created);
 
   @JsonKey(ignore: true)
   @override
@@ -328,7 +345,7 @@ abstract class _PersonModel implements PersonModel {
       required final String gender,
       required final LocationModel origin,
       required final LocationModel location,
-      required final String episode,
+      required final List<String> episode,
       required final DateTime created}) = _$PersonModelImpl;
 
   factory _PersonModel.fromJson(Map<String, dynamic> json) =
@@ -351,7 +368,7 @@ abstract class _PersonModel implements PersonModel {
   @override
   LocationModel get location;
   @override
-  String get episode;
+  List<String> get episode;
   @override
   DateTime get created;
   @override

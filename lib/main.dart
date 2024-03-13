@@ -27,9 +27,9 @@ class MyApp extends StatelessWidget {
             return sl<PersonListCubit>()..loadPerson();
           },
         ),
-        // BlocProvider<PersonSearchBloc>(
-        //   create: (context) => sl<PersonSearchBloc>(),
-        // ),
+        BlocProvider<PersonSearchBloc>(
+          create: (context) => sl<PersonSearchBloc>(),
+        ),
       ],
       child: MaterialApp(
         theme: ThemeData.dark().copyWith(
