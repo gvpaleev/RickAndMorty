@@ -1,25 +1,67 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rick_and_morty/feature/data/models/location_model.dart';
 import 'package:rick_and_morty/feature/domain/entities/person_entity.dart';
-// import 'package:rick_and_morty/feature/domain/entities/person_entity.dart';
 
-part 'person_model.freezed.dart';
-part 'person_model.g.dart';
+class PersonModel extends PersonEntity {
+  const PersonModel({
+    required id,
+    required name,
+    required status,
+    required species,
+    required type,
+    required gender,
+    required origin,
+    required location,
+    required image,
+    required episode,
+    required created,
+  }) : super(
+          id: id,
+          name: name,
+          status: status,
+          species: species,
+          type: type,
+          gender: gender,
+          origin: origin,
+          location: location,
+          image: image,
+          episode: episode,
+          created: created,
+        );
 
-@freezed
-class PersonModel extends PersonEntity with _$PersonModel {
-  const factory PersonModel(
-      {required int id,
-      required String name,
-      required String status,
-      required String species,
-      required String type,
-      required String gender,
-      required LocationModel origin,
-      required LocationModel location,
-      required List<String> episode,
-      required DateTime created}) = _PersonModel;
+  factory PersonModel.fromJson(Map<String, dynamic> json) {
+    return PersonModel(
+      id: json['id'] as int,
+      name: json['name'] as String,
+      status: json['status'] as String,
+      species: json['species'] as String,
+      type: json['type'] as String,
+      gender: json['gender'] as String,
+      origin: json['origin'] != null
+          ? LocationModel.fromJson(json['origin'])
+          : null,
+      location: json['location'] != null
+          ? LocationModel.fromJson(json['location'])
+          : null,
+      image: json['image'] as String,
+      episode:
+          (json['episode'] as List<dynamic>).map((e) => e as String).toList(),
+      created: DateTime.parse(json['created'] as String),
+    );
+  }
 
-  factory PersonModel.fromJson(Map<String, dynamic> json) =>
-      _$PersonModelFromJson(json);
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'status': status,
+      'species': species,
+      'type': type,
+      'gender': gender,
+      'origin': origin,
+      'location': location,
+      'image': image,
+      'episode': episode,
+      'created': created.toIso8601String(),
+    };
+  }
 }

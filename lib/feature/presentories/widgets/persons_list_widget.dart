@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_and_morty/feature/domain/entities/person_entity.dart';
 import 'package:rick_and_morty/feature/presentories/bloc/cubit/person_list_cubit.dart';
+import 'package:rick_and_morty/feature/presentories/widgets/person_card_widget.dart';
 
 class PersonsList extends StatelessWidget {
   const PersonsList({super.key});
@@ -12,12 +12,12 @@ class PersonsList extends StatelessWidget {
       builder: (context, state) {
         return state.when(
           initial: () => Container(
-            child: Center(
+            child: const Center(
               child: Text('initial'),
             ),
           ),
           loading: (_1, _2) => Container(
-            child: Center(
+            child: const Center(
               child: Text('loading'),
             ),
           ),
@@ -31,11 +31,11 @@ class PersonsList extends StatelessWidget {
                   color: Colors.grey[400],
                 );
               },
-              itemCount: 1,
+              itemCount: 20,
             );
           },
           error: () => Container(
-            child: Center(
+            child: const Center(
               child: Text('error'),
             ),
           ),

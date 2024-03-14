@@ -1,10 +1,10 @@
 part of 'search_bloc.dart';
 
 @freezed
-class SearchState with _$SearchState {
-  const factory SearchState.initial() = _Initial;
-  const factory SearchState.loading() = _Loading;
-  const factory SearchState.loaded({required List<PersonEntity> person}) =
+class PersonSearchState with _$PersonSearchState {
+  const factory PersonSearchState.initial() = _Initial;
+  const factory PersonSearchState.loading() = _Loading;
+  const factory PersonSearchState.loaded({required List<PersonEntity> person}) =
       _Loaded;
-  const factory SearchState.error({required String message}) = _Error;
+  const factory PersonSearchState.error({required String message}) = _Error;
 }

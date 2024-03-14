@@ -313,7 +313,7 @@ abstract class _SearchPersonEvent implements SearchEvent {
 }
 
 /// @nodoc
-mixin _$SearchState {
+mixin _$PersonSearchState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -367,16 +367,16 @@ mixin _$SearchState {
 }
 
 /// @nodoc
-abstract class $SearchStateCopyWith<$Res> {
-  factory $SearchStateCopyWith(
-          SearchState value, $Res Function(SearchState) then) =
-      _$SearchStateCopyWithImpl<$Res, SearchState>;
+abstract class $PersonSearchStateCopyWith<$Res> {
+  factory $PersonSearchStateCopyWith(
+          PersonSearchState value, $Res Function(PersonSearchState) then) =
+      _$PersonSearchStateCopyWithImpl<$Res, PersonSearchState>;
 }
 
 /// @nodoc
-class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
-    implements $SearchStateCopyWith<$Res> {
-  _$SearchStateCopyWithImpl(this._value, this._then);
+class _$PersonSearchStateCopyWithImpl<$Res, $Val extends PersonSearchState>
+    implements $PersonSearchStateCopyWith<$Res> {
+  _$PersonSearchStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -393,7 +393,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$PersonSearchStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -407,7 +407,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'SearchState.initial()';
+    return 'PersonSearchState.initial()';
   }
 
   @override
@@ -494,7 +494,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements SearchState {
+abstract class _Initial implements PersonSearchState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -507,7 +507,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$PersonSearchStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -521,7 +521,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'SearchState.loading()';
+    return 'PersonSearchState.loading()';
   }
 
   @override
@@ -608,7 +608,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements SearchState {
+abstract class _Loading implements PersonSearchState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -623,7 +623,7 @@ abstract class _$$LoadedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$LoadedImpl>
+    extends _$PersonSearchStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
       _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
@@ -659,7 +659,7 @@ class _$LoadedImpl implements _Loaded {
 
   @override
   String toString() {
-    return 'SearchState.loaded(person: $person)';
+    return 'PersonSearchState.loaded(person: $person)';
   }
 
   @override
@@ -755,7 +755,7 @@ class _$LoadedImpl implements _Loaded {
   }
 }
 
-abstract class _Loaded implements SearchState {
+abstract class _Loaded implements PersonSearchState {
   const factory _Loaded({required final List<PersonEntity> person}) =
       _$LoadedImpl;
 
@@ -776,7 +776,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$PersonSearchStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -806,7 +806,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'SearchState.error(message: $message)';
+    return 'PersonSearchState.error(message: $message)';
   }
 
   @override
@@ -901,7 +901,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements SearchState {
+abstract class _Error implements PersonSearchState {
   const factory _Error({required final String message}) = _$ErrorImpl;
 
   String get message;

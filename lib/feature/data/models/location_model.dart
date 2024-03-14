@@ -1,13 +1,19 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:rick_and_morty/feature/domain/entities/person_entity.dart';
 
-part 'location_model.freezed.dart';
-part 'location_model.g.dart';
+class LocationModel extends LocationEntity {
+  LocationModel({name, url}) : super(name: name, url: url);
 
-@freezed
-class LocationModel with _$LocationModel {
-  const factory LocationModel({required String name, required String url}) =
-      _LocationModel;
+  factory LocationModel.fromJson(Map<String, dynamic> json) {
+    return LocationModel(
+      name: json['name'] as String,
+      url: json['url'] as String,
+    );
+  }
 
-  factory LocationModel.fromJson(Map<String, dynamic> json) =>
-      _$LocationModelFromJson(json);
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'url': url,
+    };
+  }
 }

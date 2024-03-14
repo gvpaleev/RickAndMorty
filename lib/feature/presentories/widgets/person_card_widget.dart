@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/common/app_colors.dart';
+import 'package:rick_and_morty/feature/data/models/person_model.dart';
 import 'package:rick_and_morty/feature/domain/entities/person_entity.dart';
-import 'package:rick_and_morty_flutter_3/common/app_colors.dart';
-import 'package:rick_and_morty_flutter_3/feature/domain/entities/person_entity.dart';
-import 'package:rick_and_morty_flutter_3/feature/presentation/pages/person_detail_screen.dart';
-import 'package:rick_and_morty_flutter_3/feature/presentation/widgets/person_cache_image_widget.dart';
+import 'package:rick_and_morty/feature/presentories/pages/person_detail_screen.dart';
+import 'package:rick_and_morty/feature/presentories/widgets/person_cache_image_widget.dart';
+// import 'package:rick_and_morty/feature/domain/entities/person_entity.dart';
+// import 'package:rick_and_morty_flutter_3/common/app_colors.dart';
+// import 'package:rick_and_morty_flutter_3/feature/domain/entities/person_entity.dart';
+// import 'package:rick_and_morty_flutter_3/feature/presentation/pages/person_detail_screen.dart';
+// import 'package:rick_and_morty_flutter_3/feature/presentation/widgets/person_cache_image_widget.dart';
 
 class PersonCard extends StatelessWidget {
   final PersonEntity person;
@@ -15,12 +19,12 @@ class PersonCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => PersonDetailPage(person: person),
-        //   ),
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PersonDetailPage(person: person),
+          ),
+        );
       },
       child: Container(
         decoration: BoxDecoration(
@@ -29,11 +33,11 @@ class PersonCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            // PersonCacheImage(
-            //   width: 166,
-            //   height: 166,
-            //   imageUrl: person.image,
-            // ),
+            PersonCacheImage(
+              width: 166,
+              height: 166,
+              imageUrl: person.image,
+            ),
             const SizedBox(
               width: 16,
             ),
